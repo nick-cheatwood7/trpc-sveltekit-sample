@@ -3,6 +3,8 @@ lockfileVersion: 5.4
 specifiers:
   '@sveltejs/adapter-auto': ^1.0.0
   '@sveltejs/kit': ^1.0.0
+  '@trpc/client': ^10.6.0
+  '@trpc/server': ^10.6.0
   '@typescript-eslint/eslint-plugin': ^5.45.0
   '@typescript-eslint/parser': ^5.45.0
   autoprefixer: ^10.4.13
@@ -12,12 +14,20 @@ specifiers:
   postcss: ^8.4.20
   prettier: ^2.8.0
   prettier-plugin-svelte: ^2.8.1
+  superjson: ^1.12.1
   svelte: ^3.54.0
   svelte-check: ^2.9.2
   tailwindcss: ^3.2.4
+  trpc-sveltekit: ^3.2.2
   tslib: ^2.4.1
   typescript: ^4.9.3
   vite: ^4.0.0
+
+dependencies:
+  '@trpc/client': 10.6.0_@trpc+server@10.6.0
+  '@trpc/server': 10.6.0
+  superjson: 1.12.1
+  trpc-sveltekit: 3.2.2
 
 devDependencies:
   '@sveltejs/adapter-auto': 1.0.0_@sveltejs+kit@1.0.1
@@ -372,6 +382,18 @@ packages:
       - supports-color
     dev: true
 
+  /@trpc/client/10.6.0_@trpc+server@10.6.0:
+    resolution: {integrity: sha512-GvZzUQuPStXN9zTyJ+PvlGweEa1mvsbtsAgo6yfnDGjrx1HJbDMtYC+o98lz1T+UOdDPgfDE/R1MaCrWDUrpSA==}
+    peerDependencies:
+      '@trpc/server': 10.6.0
+    dependencies:
+      '@trpc/server': 10.6.0
+    dev: false
+
+  /@trpc/server/10.6.0:
+    resolution: {integrity: sha512-SXqogi536yDpfK0xsCaLvP0bzu5Qzn2rRHVr59NJ0SLwLPPKFjfHIrS+O+QnTA3TVUXvnXG0/Hllu8SJXOm7Zg==}
+    dev: false
+
   /@types/cookie/0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
     dev: true
@@ -719,6 +741,13 @@ packages:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
     dev: true
+
+  /copy-anything/3.0.3:
+    resolution: {integrity: sha512-fpW2W/BqEzqPp29QS+MwwfisHCQZtiduTe/m8idFo0xbti9fIZ2WVhAsCv4ggFVH3AgCkVdpoOCtQC6gBrdhjw==}
+    engines: {node: '>=12.13'}
+    dependencies:
+      is-what: 4.1.8
+    dev: false
 
   /cross-spawn/7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -1216,6 +1245,11 @@ packages:
     resolution: {integrity: sha512-Fd4gABb+ycGAmKou8eMftCupSir5lRxqf4aD/vd0cD2qc4HL07OjCeuHMr8Ro4CoMaeCKDB0/ECBOVWjTwUvPQ==}
     engines: {node: '>=8'}
     dev: true
+
+  /is-what/4.1.8:
+    resolution: {integrity: sha512-yq8gMao5upkPoGEU9LsB2P+K3Kt8Q3fQFCGyNCWOAnJAMzEXVV9drYb0TXr42TTliLLhKIBvulgAXgtLLnwzGA==}
+    engines: {node: '>=12.13'}
+    dev: false
 
   /isexe/2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
@@ -1722,6 +1756,13 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /superjson/1.12.1:
+    resolution: {integrity: sha512-HMTj43zvwW5bD+JCZCvFf4DkZQCmiLTen4C+W1Xogj0SPOpnhxsriogM04QmBVGH5b3kcIIOr6FqQ/aoIDx7TQ==}
+    engines: {node: '>=10'}
+    dependencies:
+      copy-anything: 3.0.3
+    dev: false
+
   /supports-color/7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
@@ -1884,6 +1925,13 @@ packages:
     resolution: {integrity: sha512-eM+pCBxXO/njtF7vdFsHuqb+ElbxqtI4r5EAvk6grfAFyJ6IvWlSkfZ5T9ozC6xWw3Fj1fGoSmrl0gUs46JVIw==}
     engines: {node: '>=6'}
     dev: true
+
+  /trpc-sveltekit/3.2.2:
+    resolution: {integrity: sha512-5a0zXPAODEfb7OiFMzcfv/89fdhWz97NVcVuRgxX9w70Ac8y6POc7ys4Fmh2W586CP/Px6RNPgi0CBJ0pC7ZSg==}
+    dependencies:
+      '@trpc/client': 10.6.0_@trpc+server@10.6.0
+      '@trpc/server': 10.6.0
+    dev: false
 
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
